@@ -1,10 +1,10 @@
 require "sinatra/base"
 require_relative "./helpers/application_helper"
-require 'pry'
+require 'loan_creator'
 
-module LoanCreator
-  class Web < Sinatra::Base
-    helpers LoanCreator::ApplicationHelper
+module LoanCreatorWeb
+  class App < Sinatra::Base
+    helpers LoanCreatorWeb::ApplicationHelper
 
     get "/" do
       parameters = fix_params_type(params)
