@@ -21,11 +21,12 @@ module LoanCreatorWeb
           LoanCreator::Standard.new(**parameters)
         end
 
-      terms =  if timetable
-                  timetable.lender_timetable.terms
-                else
-                  []
-                end
+      terms =
+        if timetable
+          timetable.lender_timetable.terms
+        else
+          []
+        end
 
       erb :index, locals: { fixed_params: parameters, terms: terms }
     end
