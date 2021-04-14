@@ -56,29 +56,29 @@
   <div class="row">
     <div class="col form-group">
       <label for="initial_values[starting_index]">Initial values[starting index]</label>
-      <input step="0.01" class="form-control" type="number" name="initial_values[starting_index]" id="initial_values[starting_index]" value= <%= fixed_params[:initial_values][:starting_index] %>>
+      <input step="0.01" class="form-control" type="number" name="initial_values[starting_index]" id="initial_values[starting_index]" value= <%= initial_values_for_form(fixed_params[:initial_values][:starting_index]) %>>
     </div>
 
     <div class="col form-group">
       <label for="initial_values[due_interests]">Initial values[due interests]</label>
-      <input step="0.01" class="form-control" type="number" name="initial_values[due_interests]" id="initial_values[due_interests]" value= <%= fixed_params[:initial_values][:due_interests] %>>
+      <input step="0.01" class="form-control" type="number" name="initial_values[due_interests]" id="initial_values[due_interests]" value= <%= initial_values_for_form(fixed_params[:initial_values][:due_interests]) %>>
     </div>
 
     <div class="col form-group">
       <label for="initial_values[accrued_delta_interests]">Initial values[accrued delta interests]</label>
-      <input step="1.0e-07" class="form-control" type="number" name="initial_values[accrued_delta_interests]" id="initial_values[accrued_delta_interests]" value= <%= fixed_params[:initial_values][:accrued_delta_interests] %>>
+      <input step="1.0e-07" class="form-control" type="number" name="initial_values[accrued_delta_interests]" id="initial_values[accrued_delta_interests]" value= <%= initial_values_for_form(fixed_params[:initial_values][:accrued_delta_interests]) %>>
     </div>
   </div>
 
   <div class="row">
     <div class="col form-group">
       <label for="initial_values[paid_interests]">Initial values[paid interests]</label>
-      <input step="0.01" class="form-control" type="number" name="initial_values[paid_interests]" id="initial_values[paid_interests]" value= <%= fixed_params[:initial_values][:paid_interests] %>>
+      <input step="0.01" class="form-control" type="number" name="initial_values[paid_interests]" id="initial_values[paid_interests]" value= <%= initial_values_for_form(fixed_params[:initial_values][:paid_interests]) %>>
     </div>
 
     <div class="col form-group">
       <label for="initial_values[paid_capital]">Initial values[paid capital]</label>
-      <input step="0.01" class="form-control" type="number" name="initial_values[paid_capital]" id="initial_values[paid_capital]" value= <%= fixed_params[:initial_values][:paid_capital] %>>
+      <input step="0.01" class="form-control" type="number" name="initial_values[paid_capital]" id="initial_values[paid_capital]" value= <%= initial_values_for_form(fixed_params[:initial_values][:paid_capital]) %>>
     </div>
   </div>
 
