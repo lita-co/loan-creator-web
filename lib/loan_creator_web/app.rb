@@ -9,16 +9,17 @@ module LoanCreatorWeb
     get "/" do
       parameters = fix_params_type(params)
 
-      timetable =  case params[:type]
-                    when 'in_fine'
-                      LoanCreator::InFine.new(**parameters)
-                    when 'bullet'
-                      LoanCreator::Bullet.new(**parameters)
-                    when 'linear'
-                      LoanCreator::Linear.new(**parameters)
-                    when 'standard'
-                      LoanCreator::Standard.new(**parameters)
-                    end
+      timetable =
+        case params[:type]
+        when 'in_fine'
+          LoanCreator::InFine.new(**parameters)
+        when 'bullet'
+          LoanCreator::Bullet.new(**parameters)
+        when 'linear'
+          LoanCreator::Linear.new(**parameters)
+        when 'standard'
+          LoanCreator::Standard.new(**parameters)
+        end
 
       terms =  if timetable
                   timetable.lender_timetable.terms
