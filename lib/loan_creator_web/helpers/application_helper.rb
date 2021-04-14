@@ -31,7 +31,7 @@ module LoanCreatorWeb
       when 'duration_in_periods'
         value.to_i
       when 'starting_index'
-        value.to_i.zero? ? nil : value.to_i
+        (value.blank? && value.to_i.zero?) ? nil : value.to_i
       end
     end
 
@@ -55,7 +55,7 @@ module LoanCreatorWeb
     end
 
     def initial_values_for_form(initial_value)
-      return nil if initial_value.nil? || initial_value.zero?
+      (initial_value.present? && initial_value.zero?) ? nil : initial_value
     end
   end
 end
