@@ -6,7 +6,7 @@ class LoanCreatorWebTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    Sinatra::Application
+    LoanCreatorWeb::App
   end
 
   def test_homepage
