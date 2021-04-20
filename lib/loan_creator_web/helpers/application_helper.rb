@@ -27,7 +27,7 @@ module LoanCreatorWeb
       when *values_to_f
         value.to_f
       when 'starts_on'
-        Date.parse(value)
+        value.blank? ? nil : Date.parse(value)
       when 'duration_in_periods'
         value.to_i
       when 'starting_index'
