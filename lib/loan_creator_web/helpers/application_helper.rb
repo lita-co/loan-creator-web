@@ -7,6 +7,7 @@ module LoanCreatorWeb
 
       {}.tap do |h|
         h[:type] = params[:type]
+        h[:realistic_durations] = true unless params[:realistic_durations].nil?
         h[:period] = params[:period]
         h[:amount] = to_right_format(params: 'amount', value: params[:amount])
         h[:annual_interests_rate] = to_right_format(params: 'annual_interests_rate', value: params[:annual_interests_rate])
@@ -52,6 +53,10 @@ module LoanCreatorWeb
 
     def number_to_euro(number)
       "#{number} €"
+    end
+
+    def checked(params:)
+      params ? 'checked' : ''
     end
 
     def initial_values_for_form(initial_value)
