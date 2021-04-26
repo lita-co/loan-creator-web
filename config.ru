@@ -1,3 +1,3 @@
-require_relative "./web"
+require_relative "./lib/loan_creator_web"
 
-run LoanCreator::Web
+run LoanCreatorWeb::App
