@@ -13,7 +13,7 @@ module LoanCreatorWeb
         h[:annual_interests_rate] = to_right_format(params: 'annual_interests_rate', value: params[:annual_interests_rate])
         h[:starts_on] = to_right_format(params: 'starts_on', value: params[:starts_on])
         h[:duration_in_periods] = to_right_format(params: 'duration_in_periods', value: params[:duration_in_periods])
-        h[:term_dates] = to_right_format(params: 'term_dates', value: params)
+        h[:term_dates] = to_right_format(params: 'term_dates', value: params[:term_dates]) if params[:dates_change].present?
         h[:initial_values] = {}.tap do |ivh|
           ivh[:paid_capital] = to_right_format(params: 'paid_capital', value: params[:initial_values][:paid_capital])
           ivh[:paid_interests] = to_right_format(params: 'paid_interests', value: params[:initial_values][:paid_interests])
@@ -35,7 +35,7 @@ module LoanCreatorWeb
       when 'starting_index'
         (value.blank? && value.to_i.zero?) ? nil : value.to_i
       when 'term_dates'
-        value.select { |k, v| k.match(/due_on_/) }.each_with_object([]) { |(k, v), arr| arr << v } if value[:dates_change].present?
+        value.map{|k, v| v}
       end
     end
 
