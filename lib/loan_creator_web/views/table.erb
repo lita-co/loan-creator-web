@@ -1,6 +1,10 @@
-<table class="table">
+<table class="table" id="container">
   <%= erb :table_head %>
   <% terms.each do |term| %>
     <%= erb :table_row, locals: { term: term } %>
   <% end %>
 </table>
+
+<div class="d-flex justify-content-center">
+  <button name="button" class="btn btn-primary btn-lg my-2" type="submit" value="update">update</button>
+</div>
