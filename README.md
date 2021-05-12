@@ -26,7 +26,7 @@ You can mount a route in your Ruby on Rails application:
 ```ruby
 # routes.rb
 
-mount LoanCreator::Web => '/loan-creator'
+mount LoanCreatorWeb::App => '/loan-creator'
 
 ```
 
