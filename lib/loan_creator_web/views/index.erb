@@ -1,4 +1,5 @@
 <form action="<%= env["SCRIPT_NAME"] %>/" method="GET" id="loan-form">
   <%= erb :form, locals: { fixed_params: fixed_params } %>
+  <%= erb :chart, locals: { terms: terms } %>
   <%= erb :table, locals: { terms: terms } %>
 </form>
