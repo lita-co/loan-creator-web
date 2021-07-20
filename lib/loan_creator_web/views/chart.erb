@@ -6,18 +6,12 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var dueOn = []
 var periodCapital = []
 var periodInterests = []
-var amountToPay = []
-var crdEndOfPeriod = []
-var dueInterestsEndOfPeriod = []
 var totalPaidCapitalEndOfPeriod = []
 var totalPaidInterestsEndOfPeriod = []
 <% terms.each do |term| %>
    dueOn.push(<%= term.due_on%>)
    periodCapital.push(<%= term.period_capital %>)
    periodInterests.push(<%= term.period_interests %>)
-   amountToPay.push(<%= term.period_amount_to_pay %>)
-   crdEndOfPeriod.push(<%= term.crd_end_of_period %>)
-   dueInterestsEndOfPeriod.push(<%= term.due_interests_end_of_period %>)
    totalPaidCapitalEndOfPeriod.push(<%= term.total_paid_capital_end_of_period %>)
    totalPaidInterestsEndOfPeriod.push(<%= term.total_paid_interests_end_of_period %>)
 <% end %>
