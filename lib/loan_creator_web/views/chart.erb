@@ -11,7 +11,7 @@ var periodInterests = []
 var totalPaidCapitalEndOfPeriod = []
 var totalPaidInterestsEndOfPeriod = []
 <% terms.each do |term| %>
-   dueOn.push(<%= term.due_on%>)
+   dueOn.push('<%= term.due_on %>')
    periodCapital.push(<%= term.period_capital %>)
    periodInterests.push(<%= term.period_interests %>)
    totalPaidCapitalEndOfPeriod.push(<%= term.total_paid_capital_end_of_period %>)
