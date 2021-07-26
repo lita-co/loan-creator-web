@@ -3,80 +3,80 @@
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
 <script type="text/javascript">
-var ctx = document.getElementById('myChart').getContext('2d');
-// Bars data set definition
-var dueOn = []
-var periodCapital = []
-var periodInterests = []
-var totalPaidCapitalEndOfPeriod = []
-var totalPaidInterestsEndOfPeriod = []
-<% terms.each do |term| %>
-   dueOn.push('<%= term.due_on %>')
-   periodCapital.push(<%= term.period_capital %>)
-   periodInterests.push(<%= term.period_interests %>)
-   totalPaidCapitalEndOfPeriod.push(<%= term.total_paid_capital_end_of_period %>)
-   totalPaidInterestsEndOfPeriod.push(<%= term.total_paid_interests_end_of_period %>)
-<% end %>
-// Chart definition
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Loan simulator'
-            },
-        },
-        responsive: true,
-        interaction: {
-            intersect: false,
-        },
-        scales: {
-        x: {
-            stacked: true,
-        },
-        y: {
-            stacked: true
-        }
-        }
-    },
-    data: {
-        labels: dueOn,
-        datasets: [
-            {
-                label: 'Period capital',
-                data: periodCapital,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1,
-                stack: 'Stack 0'
-            },
-            {
-                label: 'Period interests',
-                data: periodInterests,
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1,
-                stack: 'Stack 0'
-            },
-            {
-                label: 'Total paid capital end of period',
-                data: totalPaidCapitalEndOfPeriod,
-                backgroundColor: 'rgba(255, 159, 64, 0.2)',
-                borderColor: 'rgba(255, 159, 64, 1)',
-                borderWidth: 1,
-                stack: 'Stack 1'
-            },
-            {
-                label: 'Total paid interests end of period',
-                data: totalPaidInterestsEndOfPeriod,
-                backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                borderColor: 'rgba(153, 102, 255, 1)',
-                borderWidth: 1,
-                stack: 'Stack 1'
-            },
-        ]
-    }
-});
+  var ctx = document.getElementById('myChart').getContext('2d');
+  // Bars data set definition
+  var dueOn = []
+  var periodCapital = []
+  var periodInterests = []
+  var totalPaidCapitalEndOfPeriod = []
+  var totalPaidInterestsEndOfPeriod = []
+  <% terms.each do |term| %>
+    dueOn.push('<%= term.due_on %>')
+    periodCapital.push(<%= term.period_capital %>)
+    periodInterests.push(<%= term.period_interests %>)
+    totalPaidCapitalEndOfPeriod.push(<%= term.total_paid_capital_end_of_period %>)
+    totalPaidInterestsEndOfPeriod.push(<%= term.total_paid_interests_end_of_period %>)
+  <% end %>
+  // Chart definition
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      options: {
+          plugins: {
+              title: {
+                  display: true,
+                  text: 'Loan simulator'
+              },
+          },
+          responsive: true,
+          interaction: {
+              intersect: false,
+          },
+          scales: {
+          x: {
+              stacked: true,
+          },
+          y: {
+              stacked: true
+          }
+          }
+      },
+      data: {
+          labels: dueOn,
+          datasets: [
+              {
+                  label: 'Period capital',
+                  data: periodCapital,
+                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                  borderColor: 'rgba(255, 99, 132, 1)',
+                  borderWidth: 1,
+                  stack: 'Stack 0'
+              },
+              {
+                  label: 'Period interests',
+                  data: periodInterests,
+                  backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                  borderColor: 'rgba(54, 162, 235, 1)',
+                  borderWidth: 1,
+                  stack: 'Stack 0'
+              },
+              {
+                  label: 'Total paid capital end of period',
+                  data: totalPaidCapitalEndOfPeriod,
+                  backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                  borderColor: 'rgba(255, 159, 64, 1)',
+                  borderWidth: 1,
+                  stack: 'Stack 1'
+              },
+              {
+                  label: 'Total paid interests end of period',
+                  data: totalPaidInterestsEndOfPeriod,
+                  backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                  borderColor: 'rgba(153, 102, 255, 1)',
+                  borderWidth: 1,
+                  stack: 'Stack 1'
+              },
+          ]
+      }
+  });
 </script>
 
