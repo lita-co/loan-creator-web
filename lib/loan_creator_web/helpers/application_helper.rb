@@ -1,5 +1,3 @@
-require 'pry'
-
 module LoanCreatorWeb
   module ApplicationHelper
     def fix_params_type(params)
